@@ -51,16 +51,16 @@
       <div class="triangle-down2"></div>
       <div class="triangle-down3"></div>
     </div>
-    
+
     <div id="map_container"></div>
     <!-- <iframe src="http://map.baidu.com/" width="100%" height="100%" style="display:block"> </iframe>  -->
-    
+
     <div class="map-navbar group">
       <div class="module-locate map_search">
         <div class="map-block-input dark search-bar group"> <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;">
           <input type="search"  placeholder="车牌号" class="search-input tt-input" id="search_input" style="position: relative; vertical-align: top; background-color: transparent;">
           <span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: block; right: auto;">
-          <div class="tt-dataset-eleme-dataset"> 
+          <div class="tt-dataset-eleme-dataset">
           <!--  <span class="tt-suggestion" style="display:block"> -->
           <span class="tt-suggestion" style="display:none">
             <div class="tt-suggestion tt-cursor ">
@@ -141,4 +141,30 @@
 </div>
 </body>
 <script type="text/javascript" src="Public/js/maps.js" />
+<script type="text/javascript" src="Public/js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript">
+alert("dddd");
+/**
+<foreach name="carlist" item="vo" >
+var txt = {$vo.car_id}+"浙AQ83a25";
+var speed = {$vo.Speed}+"123KM/H";
+var longitude = {$vo.Longitude};
+var latitude = {$vo.Latitude};
+addmarker2map({$vo.Longitude}, latitude,txt, speed);
+</foreach>
+**/
+$(function(){
+	alert(1);
+	  $.ajax({
+	   type:'POST',
+	   url: '__URL__/ajax',
+	   async:true,
+	     dataType:'text',
+	   success:function(msg){
+	    alert(msg.data);<!--接收ajax函数返回的数据-->
+	    }
+
+	   })
+	 })
+</script>
 </html>

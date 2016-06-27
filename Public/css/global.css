@@ -103,7 +103,7 @@ body, input, textarea {
     color: #333333;
     font-family: "Helvetica","Segoe UI",Arial,Tahoma,"Hiragino Sans GB",华文黑体,STHeiti,微软雅黑,"Microsoft YaHei",文泉驿微米黑,"WenQuanYi Micro Hei",文泉驿正黑,"WenQuanYi Zen Hei";
     font-size: 16px;
-   
+
 }
 h1, h2, h3, h4, h5, h6, p, cite, li, ol, ul, form, table, tr, td {
     border-spacing: 0;
@@ -1254,7 +1254,7 @@ img.icon-rst-badge {
 .rptest-result-wrapper {
 	position:relative;
 	margin:10px 0 0;
-	height:192px
+	height:192px;
 }
 .rptest-hint {
 	position:absolute;

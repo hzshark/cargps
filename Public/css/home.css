@@ -317,7 +317,7 @@ button.small {
 	border:1px solid #ccc;
 	border-radius:5px;
 	background:#fff;
-	
+
 }
 .map-block.dark {
 	box-shadow:0 2px 6px rgba(0, 0, 0, 0.3), 0 4px 15px -5px rgba(0, 0, 0, 0.3)
@@ -478,7 +478,7 @@ button.small {
 }
 .homepage-header h2{ color:#333; font-size:16px; text-indent:1em}
 .homepage-header-index {
-	
+
 	width:1200px;
 	height:45px;
 	background:#666;
@@ -653,7 +653,8 @@ button.small {
 	top:46px;
 	bottom:1px;
 	z-index:1000;
-	left:0px
+	left:0px;
+	display: none;
 }
 .module-header {
 	margin:0;
@@ -974,8 +975,10 @@ display:none
 }
 .result-wrapper>.module-header {
 	padding:10px 15px;
-	font-size:12px; line-height:26px; height:52px
-	
+	font-size:12px; line-height:26px; height:52px;
+
+
+
 }
 .result-wrapper>.module-header>.highlight {
 	margin:0 4px
@@ -1011,7 +1014,7 @@ display:none
 .result-block {
 	padding:15px 15px 15px 45px;
 	border-bottom:1px solid #ddd;
-	
+
 }
 .result-block:hover, .result-block.ui_current {
 	background:#f2f5f7
@@ -1229,7 +1232,7 @@ display:none
 	.order-detail th{ background:#f1f1f1; border-bottom:1px solid #eaeaea; height:22px; line-height:22px; text-align:center color:#666; font-weight:normal; border-top:1px solid #fff}.th1{text-align:left; text-indent:16px}
 	.order-detail td{height:18px; line-height:18px; text-align:left; color:#666; font-weight:normal; text-align:center }
 	.order-detail .total td{ background:#f1f1f1; border-top:1px solid #eaeaea; height:22px; line-height:22px; }.order-detail td.th1{text-align:left; text-indent:16px}.order-detail td.price,.order-detail th.price{ text-align:right}.order-detail .total td em{ background:url(../images/ico-phone.png) no-repeat 10px 2px; padding-left:10px; font-style:normal; height:20px; width:90px; display:block; float:left; font-weight:bold}
-	
+
 	.car-icon{ width:32px; height:32px; position:absolute; left:50%; top:50%; margin-left:-16px}
 	.pop-s{ width:100px; height:60px; background:#000; position:absolute; left:-38px; top:-60px; text-align:center; border-radius:7px;opacity:0.5;}.pop-s span{ color:#fff; text-align:center; line-height:30px}.pop-s i{ color:#fff; text-align:center}
 	.triangle-down {
