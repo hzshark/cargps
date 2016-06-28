@@ -1,17 +1,11 @@
 //获取所有点的坐标
 var points = [
-	new BMap.Point(114.00100, 22.550000), 
-	new BMap.Point(114.00130, 22.550000),
-	new BMap.Point(114.00160, 22.550000), 
-	new BMap.Point(114.00200, 22.550000),
-	new BMap.Point(114.00300, 22.550500), 
-	new BMap.Point(114.00400, 22.550000),
-	new BMap.Point(114.00500, 22.550000), 
-	new BMap.Point(114.00505, 22.549800),
-	new BMap.Point(114.00510, 22.550000), 
-	new BMap.Point(114.00515, 22.550000),
-	new BMap.Point(114.00525, 22.550400), 
-	new BMap.Point(114.00537, 22.549500)
+	new BMap.Point(114.00100, 22.550000), new BMap.Point(114.00130, 22.550000),
+	new BMap.Point(114.00160, 22.550000), new BMap.Point(114.00200, 22.550000),
+	new BMap.Point(114.00300, 22.550500), new BMap.Point(114.00400, 22.550000),
+	new BMap.Point(114.00500, 22.550000), new BMap.Point(114.00505, 22.549800),
+	new BMap.Point(114.00510, 22.550000), new BMap.Point(114.00515, 22.550000),
+	new BMap.Point(114.00525, 22.550400), new BMap.Point(114.00537, 22.549500)
 ];
 
 var map;   //百度地图对象
@@ -29,11 +23,7 @@ function init() {
 	playBtn = document.getElementById("play");
 	pauseBtn = document.getElementById("pause");
 	resetBtn = document.getElementById("reset");
-
-	//初始化地图,选取第一个点为起始点
-	map = new BMap.Map("container");
-	map.centerAndZoom(points[0], 15);
-	map.enableScrollWheelZoom();
+	
 	map.addControl(new BMap.NavigationControl());
 	map.addControl(new BMap.ScaleControl());
 	map.addControl(new BMap.OverviewMapControl({isOpen: true}));
