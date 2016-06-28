@@ -1,12 +1,5 @@
 //获取所有点的坐标
-var points = [
-	new BMap.Point(114.00100, 22.550000), new BMap.Point(114.00130, 22.550000),
-	new BMap.Point(114.00160, 22.550000), new BMap.Point(114.00200, 22.550000),
-	new BMap.Point(114.00300, 22.550500), new BMap.Point(114.00400, 22.550000),
-	new BMap.Point(114.00500, 22.550000), new BMap.Point(114.00505, 22.549800),
-	new BMap.Point(114.00510, 22.550000), new BMap.Point(114.00515, 22.550000),
-	new BMap.Point(114.00525, 22.550400), new BMap.Point(114.00537, 22.549500)
-];
+var points = [];
 
 var map;   //百度地图对象
 var car;   //汽车图标
@@ -27,6 +20,29 @@ function init() {
 	map.addControl(new BMap.NavigationControl());
 	map.addControl(new BMap.ScaleControl());
 	map.addControl(new BMap.OverviewMapControl({isOpen: true}));
+	
+	$.ajax({
+		url : 'carmap/getcartrack',
+		type : 'post',
+		data : '',
+		async : false, // 默认为true 异步
+		error : function() {
+			alert('error');
+		},
+		success : function(data) {
+			$.each(data, function(i, item) {
+				return addmarker2map(item.longitude, item.latitude, item.plate,
+						item.speed);
+			});
+		}
+	});
+	
+	new BMap.Point(114.00100, 22.550000), new BMap.Point(114.00130, 22.550000),
+	new BMap.Point(114.00160, 22.550000), new BMap.Point(114.00200, 22.550000),
+	new BMap.Point(114.00300, 22.550500), new BMap.Point(114.00400, 22.550000),
+	new BMap.Point(114.00500, 22.550000), new BMap.Point(114.00505, 22.549800),
+	new BMap.Point(114.00510, 22.550000), new BMap.Point(114.00515, 22.550000),
+	new BMap.Point(114.00525, 22.550400), new BMap.Point(114.00537, 22.549500)
 	
 	//通过DrivingRoute获取一条路线的point
 	var driving = new BMap.DrivingRoute(map);

@@ -13,6 +13,10 @@ mp.centerAndZoom(point, 18); // 初始化地图
 mp.enableInertialDragging(); // 开启关系拖拽
 // mp.enableScrollWheelZoom(); //开启鼠标滚动缩放
 
+map.addControl(new BMap.NavigationControl());
+map.addControl(new BMap.ScaleControl());
+map.addControl(new BMap.OverviewMapControl({isOpen: true}));
+
 /**
  * // 添加定位控件 var geoCtrl = new BMap.GeolocationControl({ showAddressBar : true
  * //是否显示 , enableAutoLocation : true //首次是否进行自动定位 , offset : new

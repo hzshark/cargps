@@ -16,4 +16,17 @@ class Cargps {
         return $carsql;
 
     }
+    
+    function cartrack($carid, $stime, $etime){
+        $carDao = D("Cargps");
+        $where['time']  = array(array('EGT',$stime), array('ELT', $etime));
+        $where['car_id'] = $carid;
+        $cartrackdata = $carDao
+        ->field('car_id,Longitude, Latitude, Speed, time')
+        ->where($where)
+        ->order(array('time'=>'asc'))
+        ->select();
+        
+        return $cartrackdata;
+    }
 }
