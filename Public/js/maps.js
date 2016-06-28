@@ -12,19 +12,21 @@ mp.centerAndZoom(point, 18); // 初始化地图
 
 mp.enableInertialDragging(); // 开启关系拖拽
 // mp.enableScrollWheelZoom(); //开启鼠标滚动缩放
-
-map.addControl(new BMap.NavigationControl());
-map.addControl(new BMap.ScaleControl());
-map.addControl(new BMap.OverviewMapControl({isOpen: true}));
+mp.enableDragging(); //启用地图拖拽事件，默认启用(可不写)
+mp.disableDoubleClickZoom(); //启用鼠标双击放大，默认启用(可不写)
+mp.disableKeyboard(); //启用键盘上下左右键移动地图
+//http://developer.baidu.com/map/jsdemo.htm#c2_8
+// mp.addControl(new BMap.ScaleControl());  // 添加比例尺控件
+// mp.addControl(new BMap.OverviewMapControl({isOpen: true}));  //添加缩略地图控件
 
 /**
  * // 添加定位控件 var geoCtrl = new BMap.GeolocationControl({ showAddressBar : true
  * //是否显示 , enableAutoLocation : true //首次是否进行自动定位 , offset : new
  * BMap.Size(0,25) //, locationIcon : icon //定位的icon图标 });
- * 
+ *
  * //监听定位成功事件 geoCtrl.addEventListener("locationSuccess",function(e){
  * console.log(e); });
- * 
+ *
  * //监听定位失败事件 geoCtrl.addEventListener("locationError",function(e){
  * console.log(e); }); // 将定位控件添加到地图 mp.addControl(geoCtrl);
  */
@@ -39,7 +41,7 @@ map.addControl(new BMap.OverviewMapControl({isOpen: true}));
 /**
  * //创建检索控件 var searchControl = new BMapLib.SearchControl({ container :
  * "searchBox" //存放检索控件的容器 , map : mp //检索的关联地图 , type : type //检索类型 });
- * 
+ *
  * document.getElementById("selectType").onchange = function () {
  * searchControl.setType(this.value); };
  */
@@ -61,7 +63,7 @@ map.addControl(new BMap.OverviewMapControl({isOpen: true}));
  * content = content + "<div class=\"triangle-down\"></div>"; content =
  * content + "</div></div>"; var infowindow = new BMap.InfoWindow(content);
  * mkr.addEventListener("click",function(){ this.openInfoWindow(infowindow); });
- * 
+ *
  * mkr.enableDragging(); mkr.addEventListener("dragend", function(e){
  * alert("当前位置：" + e.point.lng + ", " + e.point.lat); })
  */
@@ -104,7 +106,7 @@ ComplexCustomOverlay.prototype.initialize = function(map) {
 
 	var i_text = this._span = document.createElement("i");
 	div_text.appendChild(i_text);
-	i_text.appendChild(document.createTextNode(this._speed+"km/h"));
+	i_text.appendChild(document.createTextNode(this._speed + "km/h"));
 
 	var div_down = document.createElement("div");
 	div_down.setAttribute("class", "triangle-down");
@@ -133,9 +135,10 @@ $.ajax({
 	url : 'carmap/mapdata',
 	type : 'post',
 	data : '',
-	async : false, // 默认为true 异步
+	async : true, // 默认为true 异步
 	error : function() {
 		alert('error');
+
 	},
 	success : function(data) {
 		$.each(data, function(i, item) {
@@ -144,5 +147,118 @@ $.ajax({
 		});
 	}
 });
+
+followChk = document.getElementById("follow");
+playBtn = document.getElementById("play");
+pauseBtn = document.getElementById("pause");
+resetBtn = document.getElementById("reset");
+
+// 获取所有点的坐标
+var points = new Array();
+
+var car; // 汽车图标
+var label; // 信息标签
+var centerPoint;
+
+var timer; // 定时器
+var index = 0; // 记录播放到第几个point
+
+var followChk, playBtn, pauseBtn, resetBtn; // 几个控制按钮
+
+$.ajax({
+	url : 'carmap/getcartrack',
+	type : 'post',
+	data : '',
+	async : true, // 默认为true 异步
+	error : function() {
+		alert('error');
+	},
+	success : function(data) {
+		$.each(data, function(i, item) {
+			points.push(new BMap.Point(item.longitude, item.latitude));
+		});
+	}
+});
+
+// 通过DrivingRoute获取一条路线的point
+var driving = new BMap.DrivingRoute(mp);
+//driving.search(new BMap.Point(120.21799400, 30.21028600),
+//		new BMap.Point(120.13785115, 30.32245642));
+driving.setSearchCompleteCallback(function() {
+	// 得到路线上的所有point
+	points = driving.getResults().getPlan(0).getRoute(0).getPath();
+	// 画面移动到起点和终点的中间
+	centerPoint = new BMap.Point(
+			(points[0].lng + points[points.length - 1].lng) / 2,
+			(points[0].lat + points[points.length - 1].lat) / 2);
+	mp.panTo(centerPoint);
+	// 连接所有点
+	mp.addOverlay(new BMap.Polyline(points, {
+		strokeColor : "red",
+		strokeWeight : 5,
+		strokeOpacity : 1
+	}));
+
+	// 显示小车子
+	label = new BMap.Label("", {
+		offset : new BMap.Size(-20, -20)
+	});
+	car = new BMap.Marker(points[0], {
+		icon : new BMap.Icon("car.png", new BMap.Size(48, 48), {
+			imageOffset : new BMap.Size(0, 0)
+		})
+	});
+	car.setLabel(label);
+	mp.addOverlay(car);
+
+	// 点亮操作按钮
+	playBtn.disabled = false;
+	resetBtn.disabled = false;
+});
+
+function play() {
+	playBtn.disabled = true;
+	pauseBtn.disabled = false;
+
+	var point = points[index];
+	if(index > 0) {
+		mp.addOverlay(new BMap.Polyline([points[index - 1], point], {strokeColor: "red", strokeWeight: 1, strokeOpacity: 1}));
+	}
+	label.setContent("经度: " + point.lng + "<br>纬度: " + point.lat);
+	car.setPosition(point);
+	index++;
+	if(followChk.checked) {
+		mp.panTo(point);
+	}
+	if(index < points.length) {
+		timer = window.setTimeout("play(" + index + ")", 200);
+	} else {
+		playBtn.disabled = true;
+		pauseBtn.disabled = true;
+		mp.panTo(point);
+	}
+}
+
+function pause() {
+	playBtn.disabled = false;
+	pauseBtn.disabled = true;
+
+	if(timer) {
+		window.clearTimeout(timer);
+	}
+}
+
+function reset() {
+	followChk.checked = false;
+	playBtn.disabled = false;
+	pauseBtn.disabled = true;
+
+	if(timer) {
+		window.clearTimeout(timer);
+	}
+	index = 0;
+	car.setPosition(points[0]);
+	mp.panTo(centerPoint);
+}
 
 /* ]]> */

@@ -17,15 +17,15 @@ public function index(){
 //         echo "aaaaaaaaa44444444444a";
         $this->ajaxReturn($carlist);
     }
-    
+
     public function getcartrack(){
         header("Content-Type:text/html; charset=utf-8");
         $carservice = new Cargps();
-        
+
         $carid = '1477413199';
-        $stime = 1467016618;
-        $etime = 1467072970;
-        
+        $stime = 1467005079087;
+        $etime = 1467034159999;
+
         $carlist = $carservice->cartrack($carid, $stime, $etime);
         $this->ajaxReturn($carlist);
     }
