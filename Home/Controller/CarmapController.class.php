@@ -13,6 +13,7 @@ public function index(){
         $carservice = new Cargps();
         $carlist = $carservice->showAllCar();
 //         var_dump($carlist);
+//         echo "aaaaaaaaa44444444444a";
         $this->ajaxReturn($carlist);
     }
 }

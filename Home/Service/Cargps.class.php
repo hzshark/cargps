@@ -5,14 +5,15 @@ class Cargps {
 
     function showAllCar(){
         $carDao = D("Cargps");
-        $cars = $carDao->field('car_id,Longitude, Latitude, Speed, time')
-                                        ->group('car_id')
-                                        ->order(array('time'=>'desc'))
-//                                         ->buildSql();
-                                        ->select();
-        
-                                        return $cars;
+                                        
+        $carsql = $carDao->table("car_gps as gps")->join("left join car_info as car on car.car_id = gps.car_id") 
+                         ->field('gps.car_id,car.plate,gps.Longitude, gps.Latitude, gps.Speed, gps.time')
+                         ->group('gps.car_id')
+                         ->order(array('gps.time'=>'desc'))
+//                          ->buildSql();
+                         ->select();
+
+        return $carsql;
 
     }
-
 }

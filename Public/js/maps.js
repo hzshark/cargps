@@ -100,7 +100,7 @@ ComplexCustomOverlay.prototype.initialize = function(map) {
 
 	var i_text = this._span = document.createElement("i");
 	div_text.appendChild(i_text);
-	i_text.appendChild(document.createTextNode(this._speed));
+	i_text.appendChild(document.createTextNode(this._speed+"km/h"));
 
 	var div_down = document.createElement("div");
 	div_down.setAttribute("class", "triangle-down");
@@ -135,7 +135,7 @@ $.ajax({
 	},
 	success : function(data) {
 		$.each(data, function(i, item) {
-			return addmarker2map(item.longitude, item.latitude, item.car_id,
+			return addmarker2map(item.longitude, item.latitude, item.plate,
 					item.speed);
 		});
 	}
