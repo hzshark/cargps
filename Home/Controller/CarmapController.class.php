@@ -4,7 +4,7 @@ namespace Home\Controller;
 use Think\Controller;
 use Home\Service\Cargps;
 class CarmapController extends Controller {
-public function index(){
+    public function index(){
         header("Content-Type:text/html; charset=utf-8");
         $this->display('map','utf-8');
     }
@@ -23,11 +23,16 @@ public function index(){
         $carservice = new Cargps();
 
         $carid = '1477413199';
-        $stime = 1467005079087;
-        $etime = 1467034159999;
+        $etime = 1467074401;
+        $stime = $etime-24*60*60;
 
         $carlist = $carservice->cartrack($carid, $stime, $etime);
         $this->ajaxReturn($carlist);
+    }
+    
+    public function track(){
+        header("Content-Type:text/html; charset=utf-8");
+        $this->display('track','utf-8');
     }
 }
 

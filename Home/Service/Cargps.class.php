@@ -26,7 +26,7 @@ class Cargps {
         ->where($where)
         ->order(array('time'=>'asc'))
         ->select();
-        
+//         var_dump($carDao->getLastSql());
         return $cartrackdata;
     }
 }
