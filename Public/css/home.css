@@ -1265,7 +1265,12 @@ display:none;
 .cz{ border-top:1px solid #ccc; padding-top:16px; float:left; width:100%; margin-top:10px}.cz li{ width:25%; float:left; text-align:center}.cz li .img{ width:60px; height:60px; display:inline-block; background:url(../images/u124.png) 50% 50% no-repeat; background-size:60px; text-indent:-9999px}.cz li.cz2 .img{ background:url(../images/u122.png) 50% 50% no-repeat; background-size:40px;}.cz li.cz3 .img{ background:url(../images/u120.png) 50% 50% no-repeat; background-size:60px;}.cz li.cz4 .img{ background:url(../images/u118.png) 50% 50% no-repeat; background-size:60px;}
 .close{ position:absolute; right:16px; top:8px; color:#666; font-family:Tahoma, Geneva, sans-serif}
 
-#map_container{height:100%; border: 1px solid #999;height:600px;}
+#map_container{
+	height:100%;
+	 border: 1px solid #999;
+	 min-width:600px;
+     min-height:767px;
+}
 
 @media print{
   #notes{display:none}
