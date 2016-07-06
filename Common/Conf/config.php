@@ -40,7 +40,7 @@ return array(
     'HTML_CACHE_ON' => false, //默认关闭静态缓存
     'HTML_CACHE_TIME' => 60, //静态缓存有效期
     'HTML_READ_TYPE' => 0, //静态缓存读取方式 0 readfile 1 redirect
-    'HTML_FILE_SUFFIX' => '.shtml', //默认静态文件后缀
+    'HTML_FILE_SUFFIX' => '.html', //默认静态文件后缀
 
     /* 错误设置 */
     'ERROR_MESSAGE' => '您浏览的页面暂时发生了错误！请稍后再试～', //错误显示信息,非调试模式有效
