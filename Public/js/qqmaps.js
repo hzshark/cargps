@@ -28,6 +28,24 @@ $(function() {
 			position : new qq.maps.LatLng(longitude, latitude)
 		});
 	}
+	
+	function addStartMarker(){
+		var anchor = new qq.maps.Point(6, 6),
+        size = new qq.maps.Size(24, 36),
+        start_icon = new qq.maps.MarkerImage(
+            'img/busmarker.png', 
+            size, 
+            new qq.maps.Point(0, 0),
+            anchor
+        ),
+        end_icon = new qq.maps.MarkerImage(
+            'img/busmarker.png', 
+            size, 
+            new qq.maps.Point(24, 0),
+            anchor
+            
+        );
+	}
 
 	function addTextMarker(longitude, latitude){
 		

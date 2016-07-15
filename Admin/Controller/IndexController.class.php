@@ -2,7 +2,42 @@
 namespace Admin\Controller;
 use Think\Controller;
 class IndexController extends Controller {
+    public function login(){
+        header("Content-Type:text/html; charset=utf-8");
+        $this->display('login','utf-8');
+    }
+    
+    public function verify() {
+        $Verify =     new \Think\Verify();
+        $Verify->imageW = 150;
+        $Verify->imageH = 34;
+        $Verify->fontSize = 16;
+        $Verify->length   = 4;
+        
+//         // 验证码字体使用 ThinkPHP/Library/Think/Verify/ttfs/5.ttf
+//         $Verify->fontttf = '5.ttf';
+        
+        // 开启验证码背景图片功能 随机使用 ThinkPHP/Library/Think/Verify/bgs 目录下面的图片
+//         $Verify->useImgBg = true;        
+        
+//         // 设置验证码字符为纯数字
+//         $Verify->codeSet = '0123456789';
+
+//         $Verify->useZh = true;
+//         // 设置验证码字符
+//         $Verify->zhSet = '们以我到他会作时要动国产的一是工就年阶义发成部民可出能方进在了不和有大这';
+        $Verify->useNoise = false;  // 关闭验证码杂点
+        $Verify->entry();
+    }
+    
     public function index(){
-        $this->show('<style type="text/css">*{ padding: 0; margin: 0; } div{ padding: 4px 48px;} body{ background: #fff; font-family: "微软雅黑"; color: #333;font-size:24px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.8em; font-size: 36px } a,a:hover{color:blue;}</style><div style="padding: 24px 48px;"> <h1>:)</h1><p>欢迎使用 <b>ThinkPHP</b>！</p><br/>版本 V{$Think.version}</div><script type="text/javascript" src="http://ad.topthink.com/Public/static/client.js"></script><thinkad id="ad_55e75dfae343f5a1"></thinkad><script type="text/javascript" src="http://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script>','utf-8');
+        header("Content-Type:text/html; charset=utf-8");
+        $this->display('carManagement','utf-8');
+    }
+    
+    // 检测输入的验证码是否正确，$code为用户输入的验证码字符串
+    function check_verify($code, $id = ''){
+        $verify = new \Think\Verify();
+        return $verify->check($code, $id);
     }
 }
