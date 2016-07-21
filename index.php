@@ -18,7 +18,7 @@ if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 define('APP_DEBUG',True);
 
 // 定义应用目录
-define('COMMON_PATH','./Common/');
+define('COMMON_PATH',dirname(__FILE__) . '/Common/');
 define('RUNTIME_PATH','./Runtime/');
 define('BUILD_DIR_SECURE', true);//如果你的环境足够安全，不希望生成目录安全文件，可以在入口文件里面关闭目录安全文件的生成
 
