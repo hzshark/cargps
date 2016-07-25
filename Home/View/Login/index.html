@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>欢迎登录新能源汽车实时调度系统</title>
+<meta name="generator" content="editplus"/>
+<meta name="author" content="Ariex"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link href="__PUBLIC__/css/login.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/js/js.js"></script>
+<script type="text/javascript">
+function CheckForm()
+{
+   return true;
+}
+
+</script>
+</head>
+
+<body onload="javascript:document.form1.PASSWORD.focus();" class="home">
+<div class="lay_background" id="lay_bg"> 
+  <script type="text/javascript">
+
+　　var m=4;
+
+　　var n=Math.floor(Math.random()*m+1)
+
+　　document.write("<img class='lay_background_img lay_background_img_fade_out' id='lay_bg_img'  src='__PUBLIC__/images/bg" + n + ".jpg'>");
+
+　　</script> 
+</div>
+<script type="text/javascript" src="__PUBLIC__/js/js2.js"></script>
+<div id="login">
+  <h1>新能源汽车 实时调度系统</h1>
+  <form name="form1" method="post" action="Login/logincheck" autocomplete="off" onsubmit="return CheckForm();" class="form">
+    <ul>
+      <li> <em class="user">账号</em>
+        <input type="text" placeholder="请输入账号" class="input" name="UNAME" size="15" onmouseover="this.focus()" onfocus="this.select()"  value="">
+      </li>
+      <li> <em class="pw">密码</em>
+        <input type="password" placeholder="请输入密码"  class="input" name="PASSWORD" onmouseover="this.focus()" onfocus="this.select()" size="15" value="">
+      </li>
+      <li> <em class="pw">验证码</em>
+        <input type="text" placeholder="验证码"  class="input" name="" onmouseover="this.focus()" onfocus="this.select()" size="4" value="">
+        <div class="code"><img src="/home/index/verify"></div>
+      </li>
+      <li style="border:none">
+        <input type="submit" value="登录" class="sumbit"  name="submit">
+      </li>
+    </ul>
+  </form>
+  <div class="bottom-bar">
+    <div class="clr"></div>
+  </div>
+</div>
+</body>
+</html>

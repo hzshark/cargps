@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>欢迎登录新能源汽车实时调度系统</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="css/skin.css" rel="stylesheet" media="screen">
+<title>DEMO</title>
+</head>
+
+<body class="ng-scope-body">
+<div class="navbar navbar-inverse  navbar-fixed-top bg-dark">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a data-container="body" data-animation="am-slide-top aside-open-backdrop" data-placement="top" data-template="views/partials/aside.tpl.html" bs-aside="aside" class="navbar-brand text-lt ng-scope"> <img src="images/logos.png" ></a> </div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">修改密码</span></a></li>
+        <li> <a href="#" class="dropdown-toggle">退出 </a> </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</div>
+<div class="app-aside hidden-xs bg-dark lt">
+  <div bs-affix="" class="app-aside-inner ng-scope affix-top" style="position: absolute;"> 
+    <!-- uiView: aside@ -->
+    <div ui-view="aside@" class="app-aside-body scrollable hover ng-scope">
+      <nav ui-nav="" class="ng-scope">
+        <ul class="nav">
+          <li> <a> <i class="icon ui-icon text-xxs b-2x glyphicon glyphicon-home bg-1"></i> <span class="font-normal">首页</span> </a></li>
+          <li> <a> <i class="icon ui-icon text-xxs b-2x glyphicon glyphicon-list bg-2"></i> <span class="font-normal">车辆监控</span> </a></li>
+          <li  class="active"> <a> <i class="icon ui-icon text-xxs b-2x glyphicon glyphicon-user  bg-3"></i> <span class="font-normal">统计分析</span> </a>
+            <ul class="nav nav-sub bg">
+              <li ui-sref-active="active"> <a  href="#">整车数据</a> </li>
+              <li ui-sref-active="active"> <a   href="#">故障与报警</a> </li>
+              <li ui-sref-active="active"> <a   href="#">动力蓄电池包温度数据</a> </li>
+              <li ui-sref-active="active"> <a   href="#">汽车电机部分数据</a> </li>
+              <li ui-sref-active="active"> <a  href="#">燃料电池数据</a> </li>
+              <li ui-sref-active="active"> <a   href="#">汽车发动机部分数据</a> </li>
+              <li ui-sref-active="active"> <a   href="#">极值数据</a> </li>
+              <li ui-sref-active="active"> <a   href="#">充电设备</a> </li>
+            </ul>
+          </li>
+          <li  class="active"> <a> <i class="icon ui-icon text-xxs b-2x glyphicon glyphicon-cloud  bg-4"></i> <span class="font-normal">故障报警</span> </a>
+            <ul class="nav nav-sub bg">
+              <li ui-sref-active="active"> <a  href="#">实时故障</a> </li>
+              <li ui-sref-active="active"> <a   href="#">历史故障</a> </li>
+            </ul>
+          </li>
+          <li  class="active"> <a> <i class="icon ui-icon text-xxs b-2x glyphicon glyphicon-cog  bg-5"></i> <span class="font-normal">后台管理</span> </a>
+            <ul class="nav nav-sub bg">
+              <li ui-sref-active="active"> <a  href="#">用户管理</a> </li>
+              <li ui-sref-active="active"> <a   href="#">角色管理</a> </li>
+              <li ui-sref-active="active"> <a  href="#">机构管理</a> </li>
+              <li ui-sref-active="active"> <a   href="#">车辆管理</a> </li>
+              <li ui-sref-active="active"> <a  href="#">设备管理</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="close-left"><a href="#">收起</a></div>
+    <div class="app-aside-footer p text-xs text-center">V1.0 by xxx </div>
+  </div>
+</div>
+<div class="app-content ng-scope">
+  <div class="p-h-md p-v bg-white box-shadow pos-rlt ng-scope">
+    <h3 class="no-margin">查看图片 </h3>
+  </div>
+  <div class="p-md ng-scope">
+    <div class="row">
+      <div class=" col-md-12">
+        <div class="panel p">
+          <div class="row row-sm">
+            <div class="col-xs-12">
+              <div class="btn-group">
+                <input type="text" class="form-control" placeholder="开始时间" aria-describedby="basic-addon1">
+              </div>
+              <div class="btn-group">
+                <input type="text" class="form-control" placeholder="结束时间" aria-describedby="basic-addon1">
+              </div>
+              <button class="btn  btn-primary"><i class="glyphicon glyphicon-search"> </i> 查询</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-right"> </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">5月31日</div>
+      <div class="row ng-scope img-record">
+        <div class=" col-md-12">
+          <div class="col-sm-4">
+            <div class="play"></div>
+            <a href="#"><img src="images/u337.png"></a></div>
+          <div class="col-sm-4">
+            <div class="play"></div>
+            <a href="#"><img src="images/u337.png"></a></div>
+          <div class="col-sm-4">
+            <div class="play"></div>
+            <a href="#"><img src="images/u337.png"></a></div>
+          <div class="col-sm-4">
+            <div class="play"></div>
+            <a href="#"><img src="images/u337.png"></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">5月31日</div>
+      <div class="row ng-scope img-record">
+        <div class=" col-md-12">
+          <div class="col-sm-4">
+            <div class="play"></div>
+            <a href="#"><img src="images/u337.png"></a></div>
+          <div class="col-sm-4">
+            <div class="play"></div>
+            <a href="#"><img src="images/u337.png"></a></div>
+          <div class="col-sm-4">
+            <div class="play"></div>
+            <a href="#"><img src="images/u337.png"></a></div>
+          <div class="col-sm-4">
+            <div class="play"></div>
+            <a href="#"><img src="images/u337.png"></a></div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <ul class="pagination">
+        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li> <a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> </a> </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<script src="http://code.jquery.com/jquery.js"></script> 
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

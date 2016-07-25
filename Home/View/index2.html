@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>欢迎登录新能源汽车实时调度系统</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="css/skin.css" rel="stylesheet" media="screen">
+<title>DEMO</title>
+</head>
+
+<body class="ng-scope-body">
+<div class="navbar navbar-inverse  navbar-fixed-top bg-dark">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a data-container="body" data-animation="am-slide-top aside-open-backdrop" data-placement="top" data-template="views/partials/aside.tpl.html" bs-aside="aside" class="navbar-brand text-lt ng-scope"> <img src="images/logos.png" ></a> </div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">修改密码</span></a></li>
+        <li> <a href="#" class="dropdown-toggle">退出 </a> </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</div>
+<div class="app-aside hidden-xs bg-dark lt"  style=" display:none">
+  <div bs-affix="" class="app-aside-inner ng-scope affix-top" style="position: absolute;"> 
+    <!-- uiView: aside@ -->
+    <div ui-view="aside@" class="app-aside-body scrollable hover ng-scope">
+      <nav ui-nav="" class="ng-scope">
+        <ul class="nav">
+          <li> <a> <i class="icon ui-icon text-xxs b-2x glyphicon glyphicon-home bg-1"></i> <span class="font-normal">首页</span> </a></li>
+          <li> <a> <i class="icon ui-icon text-xxs b-2x glyphicon glyphicon-list bg-2"></i> <span class="font-normal">车辆监控</span> </a></li>
+          <li  class="active"> <a> <i class="icon ui-icon text-xxs b-2x glyphicon glyphicon-user  bg-3"></i> <span class="font-normal">统计分析</span> </a>
+            <ul class="nav nav-sub bg">
+              <li ui-sref-active="active"> <a  href="#">整车数据</a> </li>
+              <li ui-sref-active="active"> <a   href="#">故障与报警</a> </li>
+              <li ui-sref-active="active"> <a   href="#">动力蓄电池包温度数据</a> </li>
+              <li ui-sref-active="active"> <a   href="#">汽车电机部分数据</a> </li>
+              <li ui-sref-active="active"> <a  href="#">燃料电池数据</a> </li>
+              <li ui-sref-active="active"> <a   href="#">汽车发动机部分数据</a> </li>
+              <li ui-sref-active="active"> <a   href="#">极值数据</a> </li>
+              <li ui-sref-active="active"> <a   href="#">充电设备</a> </li>
+            </ul>
+          </li>
+          <li  class="active"> <a> <i class="icon ui-icon text-xxs b-2x glyphicon glyphicon-cloud  bg-4"></i> <span class="font-normal">故障报警</span> </a>
+            <ul class="nav nav-sub bg">
+              <li ui-sref-active="active"> <a  href="#">实时故障</a> </li>
+              <li ui-sref-active="active"> <a   href="#">历史故障</a> </li>
+            </ul>
+          </li>
+          <li  class="active"> <a> <i class="icon ui-icon text-xxs b-2x glyphicon glyphicon-cog  bg-5"></i> <span class="font-normal">后台管理</span> </a>
+            <ul class="nav nav-sub bg">
+              <li ui-sref-active="active"> <a  href="#">用户管理</a> </li>
+              <li ui-sref-active="active"> <a   href="#">角色管理</a> </li>
+              <li ui-sref-active="active"> <a  href="#">机构管理</a> </li>
+              <li ui-sref-active="active"> <a   href="#">车辆管理</a> </li>
+              <li ui-sref-active="active"> <a  href="#">设备管理</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="close-left"><a href="#">收起</a></div>
+    <div class="app-aside-footer p text-xs text-center">V1.0 by xxx </div>
+  </div>
+</div>
+<div class="open-left"><a href="#">展开</a></div>
+<div class="ng-scope">
+  <div class="p-h-md p-v bg-white box-shadow pos-rlt ng-scope">
+    <h3 class="no-margin">欢迎使用 </h3>
+  </div>
+  <div class="p-md ng-scope">
+    <div class="row  ng-scope">
+      <div class="col-sm-3">
+        <div class="panel no-border bg-info">
+          <div class="panel-heading lt text-lt"> 车辆总数 </div>
+          <div class="panel-body p-v-md">
+            <div class="clear">
+              <div class="text-2x font-bold text-lt">470</div>
+              <small class="">截止2016-06-20 14:25</small> </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="panel no-border bg-success">
+          <div class="panel-heading lt text-lt"> 已上牌 </div>
+          <div class="panel-body p-v-md">
+            <div class="clear">
+              <div class="text-2x font-bold text-lt">470</div>
+              <small class="">截止2016-06-20 14:25</small> </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="panel no-border bg-primary">
+          <div class="panel-heading lt text-lt"> 行驶中 </div>
+          <div class="panel-body p-v-md">
+            <div class="clear">
+              <div class="text-2x font-bold text-lt">1391</div>
+              <small class="">截止2016-06-20 14:25</small> </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="panel no-border bg-warning dk">
+          <div class="panel-heading bg text-lt"> 停驶中 </div>
+          <div class="panel-body p-v-md">
+            <div class="clear m-l">
+              <div class="text-2x font-bold text-lt">75</div>
+              <small class="">截止2016-06-20 14:25</small> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class=" col-md-12">
+        <div class="panel p" style=" display:none">
+          <div class="row row-sm">
+            <div class="col-xs-12">
+              <button class="btn  btn-success"><i class="glyphicon glyphicon-plus"> </i> 新增</button>
+              <button class="btn  btn-warning"><i class="glyphicon glyphicon-remove"> </i> 取消</button>
+              <div class="btn-group">
+                <input type="text" class="form-control" placeholder="开始时间" aria-describedby="basic-addon1">
+              </div>
+              <div class="btn-group">
+                <input type="text" class="form-control" placeholder="结束时间" aria-describedby="basic-addon1">
+              </div>
+              <div class="btn-group">
+                <input type="text" class="form-control" placeholder="条件" aria-describedby="basic-addon1">
+              </div>
+              <div class="btn-group">
+                <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">下拉 <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">下拉选项</a></li>
+                  <li><a href="#">下拉选项</a></li>
+                  <li><a href="#">下拉选项</a></li>
+                </ul>
+              </div>
+              <div class="btn-group">
+                <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">状态 <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">完成</a></li>
+                  <li><a href="#">正常</a></li>
+                </ul>
+              </div>
+              <div class="btn-group">
+                <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">条件 <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">有</a></li>
+                  <li><a href="#">无</a></li>
+                </ul>
+              </div>
+              <button class="btn  btn-primary"><i class="glyphicon glyphicon-search"> </i> 查询</button>
+              <button class="btn  btn-primary"><i class="glyphicon glyphicon-log-in"> </i> 导出</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-right"> </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">最新告警</div>
+      <table class="table table-bordered table-striped" st-table="rowCollectionBasic">
+        <thead>
+          <tr>
+            <th><input type="checkbox"></th>
+            <th>车牌号</th>
+            <th>故障类型</th>
+            <th>故障种类</th>
+            <th>故障描述</th>
+            <th>故障时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- ngRepeat: row in rowCollectionBasic -->
+          <tr st-select-row="row" ng-repeat="row in rowCollectionBasic" class="ng-scope ng-isolate-scope">
+            <td class="ng-binding"><input type="checkbox"></td>
+            <td class="ng-binding">26224356671</td>
+            <td class="ng-binding">主电源掉电</td>
+            <td class="ng-binding">一级故障</td>
+            <td class="ng-binding">车辆电路正常，ACC关，定位北纬，东经，主电源掉电，空调关</td>
+            <td class="ng-binding">2016-03-23 13:35</td>
+            <td class="ng-binding">查看</td>
+          </tr>
+          <!-- end ngRepeat: row in rowCollectionBasic -->
+          <tr st-select-row="row" ng-repeat="row in rowCollectionBasic" class="ng-scope ng-isolate-scope">
+            <td class="ng-binding"><input type="checkbox"></td>
+            <td class="ng-binding">26224356671</td>
+            <td class="ng-binding">主电源掉电</td>
+            <td class="ng-binding">一级故障</td>
+            <td class="ng-binding">车辆电路正常，ACC关，定位北纬，东经，主电源掉电，空调关</td>
+            <td class="ng-binding">2016-03-23 13:35</td>
+            <td class="ng-binding">查看</td>
+          </tr>
+          <!-- end ngRepeat: row in rowCollectionBasic -->
+          <tr st-select-row="row" ng-repeat="row in rowCollectionBasic" class="ng-scope ng-isolate-scope">
+            <td class="ng-binding"><input type="checkbox"></td>
+            <td class="ng-binding">26224356671</td>
+            <td class="ng-binding">主电源掉电</td>
+            <td class="ng-binding">一级故障</td>
+            <td class="ng-binding">车辆电路正常，ACC关，定位北纬，东经，主电源掉电，空调关</td>
+            <td class="ng-binding">2016-03-23 13:35</td>
+            <td class="ng-binding">查看</td>
+          </tr>
+          <!-- end ngRepeat: row in rowCollectionBasic -->
+        </tbody>
+      </table>
+    </div>
+    <nav>
+      <ul class="pagination">
+        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li> <a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> </a> </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<script src="http://code.jquery.com/jquery.js"></script> 
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

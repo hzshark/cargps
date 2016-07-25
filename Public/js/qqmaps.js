@@ -1,4 +1,5 @@
 var citylocation, map, marker = null;
+
 $(function() {
 	var center = new qq.maps.LatLng(30.278914, 120.124357);
 	map = new qq.maps.Map(document.getElementById('map_container'), {
@@ -11,13 +12,13 @@ $(function() {
 			map.setCenter(result.detail.latLng);
 		}
 	});
-	// 调用searchLocalCity();方法 根据用户IP查询城市信息。
-	citylocation.searchLocalCity();
+	//调用searchLocalCity();方法    根据用户IP查询城市信息。
+    citylocation.searchLocalCity();
 	// 设置自定义标记
 	var anchor = new qq.maps.Point(6, 6);
 	var size = new qq.maps.Size(48, 48);
 	var origin = new qq.maps.Point(0, 0);
-	var icon = new qq.maps.MarkerImage('Public/images/car.png', size, origin,
+	var icon = new qq.maps.MarkerImage(car_img, size, origin,
 			anchor);
 	// var marker_position = new qq.maps.LatLng(39.916527,116.397128);
 
@@ -33,13 +34,13 @@ $(function() {
 		var anchor = new qq.maps.Point(6, 6),
         size = new qq.maps.Size(24, 36),
         start_icon = new qq.maps.MarkerImage(
-            'img/busmarker.png', 
+        	busmarker, 
             size, 
             new qq.maps.Point(0, 0),
             anchor
         ),
         end_icon = new qq.maps.MarkerImage(
-            'img/busmarker.png', 
+        	busmarker, 
             size, 
             new qq.maps.Point(24, 0),
             anchor
