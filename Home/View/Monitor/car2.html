@@ -7,28 +7,8 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>欢迎登录新能源汽车实时调度系统</title>
-<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<link href="__PUBLIC__/css/skin.css" rel="stylesheet" media="screen">
-<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp&libraries=convertor"></script>
-<script type="text/javascript">
-var car_img = "__PUBLIC__/images/car.png";
-var busmarker = "__PUBLIC__/images/busmarker.png";
-var vehicles = {$vehicles};
-</script>
-<style>
-#map_container{
-	 height:100%;
-	 border: 1px solid #999;
-	 min-width:500px;
-     min-height:767px;
-}
-
-@media print{
-  #notes{display:none}
-  #map_container{margin:0}
-}
-
-</style>
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="css/skin.css" rel="stylesheet" media="screen">
 <title>DEMO</title>
 </head>
 
@@ -38,7 +18,7 @@ var vehicles = {$vehicles};
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a data-container="body" data-animation="am-slide-top aside-open-backdrop" data-placement="top" data-template="views/partials/aside.tpl.html" bs-aside="aside" class="navbar-brand text-lt ng-scope"> <img src="__PUBLIC__/images/logos.png" ></a> </div>
+      <a data-container="body" data-animation="am-slide-top aside-open-backdrop" data-placement="top" data-template="views/partials/aside.tpl.html" bs-aside="aside" class="navbar-brand text-lt ng-scope"> <img src="images/logos.png" ></a> </div>
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -151,35 +131,13 @@ var vehicles = {$vehicles};
           <div class="triangle-down"></div>
         </div>
       </div>
-      <div class="pop-b" style="left:300px; top:300px"> <a class="close">X</a>
-        <h2>浙A23243A    行驶中</h2>
-        <div class="state">
-          <ul>
-            <li><span>上报时间：</span><em>2016-01-02 12：13：34</em></li>
-            <li><span>车速：</span><em>12km/h</em></li>
-            <li><span>VIN码：</span><em>ljds23u49832798</em></li>
-          </ul>
-        </div>
-        <div class="cz">
-          <ul>
-            <li class="cz1"><a  class="img">跟踪车辆</a><br>
-              跟踪车辆</li>
-            <li class="cz2"><a  class="img">历史轨迹</a><br>
-              历史轨迹</li>
-            <li class="cz3"><a  class="img">抓拍车辆</a><br>
-              抓拍车辆</li>
-            <li class="cz4"><a  class="img">查看图片</a><br>
-              查看图片</li>
-          </ul>
-        </div>
-        <div class="triangle-down2"></div>
-        <div class="triangle-down3"></div>
-      </div>
+      
       <div class="pop-b" style="left:600px; top:300px; height:200px"> <a class="close">X</a>
         <h2>浙A23243A    行驶中</h2>
         <div class="state" style="margin-top:16px">
           <ul>
             <li><span>抓拍类型：</span><em><input name="" type="radio" value="">连续拍3张</em><em style="margin-left:16px"><input name="" type="radio" value="">连续拍3张</em></li>
+            
           </ul>
         </div>
         <div class="cz">
@@ -188,14 +146,12 @@ var vehicles = {$vehicles};
         <div class="triangle-down2"></div>
         <div class="triangle-down3"></div>
       </div>
-       <div id="map_container"></div>
+      <iframe src="http://map.baidu.com/" width="100%" height="100%" frameborder="0" scrolling="no" style="min-height:650px; display:block"> </iframe>
     </div>
     <nav> </nav>
   </div>
 </div>
-<script type="text/javascript" src="Public/js/jquery.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="Public/js/qqmaps.js" />
-
+<script src="http://code.jquery.com/jquery.js"></script> 
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

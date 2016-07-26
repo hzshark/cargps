@@ -15,8 +15,8 @@ class MonitorController extends Controller
         
         $vehicles = $vehicle->showAllCar();
         
-        $this->assign("vehicles", $vehicles);
-        
+        $this->assign("vehicles", json_encode($vehicles));
+        var_dump($vehicles);
         $this->assign("user_ip", $user_ip);
         $this->display('car', 'utf-8');
     }

@@ -12,7 +12,7 @@ class Cargps {
                          ->order(array('gps.time'=>'desc'))
 //                          ->buildSql();
                          ->select();
-
+// var_dump($carDao->getLastSql());
         return $carsql;
 
     }
