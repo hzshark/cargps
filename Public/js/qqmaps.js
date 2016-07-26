@@ -41,13 +41,13 @@ $(function() {
 	}
 	
 	function markerContent(plate, speed){
-		var html = "<div class=\"pop-b\" style=\"left:300px; top:300px\"> <a class=\"close\">X</a>";
+		var html = "<div class=\"popbbbb\" style=\"left:300px; top:300px\"> <a class=\"close\">X</a>";
 		var is_running = "停驶中";
 		if (speed> 0){
 			is_running = "行驶中";
 		}
 		html += "<h2>"+plate+"    "+is_running+"</h2>";
-		html += "<div class=\"state\">";
+//		html += "<div class=\"state\">";
 //        <div class="state">
 //          <ul>
 //            <li><span>上报时间：</span><em>2016-01-02 12：13：34</em></li>
@@ -69,8 +69,9 @@ $(function() {
 //        </div>
 //        <div class="triangle-down2"></div>
 //        <div class="triangle-down3"></div>
-		html += "</div>";
-		return '<div style="text-align:center;white-space:nowrap;margin:10px;">单击标记</div>';
+		html += "单击标记单击标记单击标记单击标记单击标记单击标记单击标记单击标记</div>";
+		return html;
+//		return '<div style="left:300px; top:300px" class="popbbbb" > <a class="close">X</a>单击标记单击标记单击标记单击标记单击标记单击标记单击标记单击标记</div>';
 	}
 	
 	
@@ -119,6 +120,7 @@ $(function() {
 //            setTimeout(function(){ map.panTo(latlng);}, 1000);
             addmarker(latlng, content);
         });
+        
 	}
 	
 });

@@ -2174,7 +2174,7 @@ th.deal-sta {
 	z-index: 98
 }
 
-.pop-b {
+.popbbbb {
 	width: 360px;
 	height: 240px;
 	background: #fff;
@@ -2184,9 +2184,10 @@ th.deal-sta {
 	padding: 10px;
 	right: 10%;
 	top: 10%;
+	display: none;
 }
 
-.pop-b h2 {
+.popbbbb h2 {
 	text-align: center;
 	width: 340px
 }
