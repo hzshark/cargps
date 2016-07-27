@@ -2105,7 +2105,7 @@ th.deal-sta {
 	font-weight: bold
 }
 
-.car-icon {
+.caricon {
 	width: 32px;
 	height: 32px;
 	position: absolute;
@@ -2114,7 +2114,7 @@ th.deal-sta {
 	margin-left: -16px
 }
 
-.pop-s {
+.pops {
 	width: 100px;
 	height: 60px;
 	background: #000;
@@ -2126,13 +2126,13 @@ th.deal-sta {
 	opacity: 0.5;
 }
 
-.pop-s span {
+.pops span {
 	color: #fff;
 	text-align: center;
 	line-height: 30px
 }
 
-.pop-s i {
+.pops i {
 	color: #fff;
 	text-align: center
 }

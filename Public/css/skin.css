@@ -13371,7 +13371,7 @@ a.text-dark:hover {
     border-right: 10px solid transparent;
     border-top: 16px solid #000; position:absolute; left:50%; margin-left:-5px; bottom:-16px; z-index:98
 }
-.pop-b{ width:360px; height:240px; background:#fff; border:1px solid #666; position:absolute; border-radius:10px; padding:10px; right:50%; top:50%;}
+.popb{ width:360px; height:240px; background:#fff; border:1px solid #666; border-radius:10px; padding:10px; right:50%; top:50%;}
 .pop-b h2{ text-align:center; width:340px; marign:0; font-size:18px}
 .state li{ width:300px; float:left; list-style:none}
 .state li span{ width:100px; text-align:right; font-weight:bold; display:block; float:left}.state li em{  display:block; float:left; font-style:normal}

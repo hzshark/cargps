@@ -7,7 +7,7 @@ class Cargps {
         $carDao = D("Cargps");
                                         
         $carsql = $carDao->table("car_gps as gps")->join("left join car_info as car on car.car_id = gps.car_id") 
-                         ->field('gps.car_id,car.plate,gps.Longitude, gps.Latitude, gps.Speed, gps.time')
+                         ->field('gps.car_id,car.plate,gps.Longitude, gps.Latitude, gps.Speed, FROM_UNIXTIME(gps.time,"%Y-%m-%d %H:%i:%S") as time')
                          ->group('gps.car_id')
                          ->order(array('gps.time'=>'desc'))
 //                          ->buildSql();
