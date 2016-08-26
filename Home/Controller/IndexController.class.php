@@ -1,10 +1,10 @@
 <?php
 namespace Home\Controller;
 
-use Think\Controller;
+use Home\Common\CommonController;
 use Home\Service\Carinfo;
 
-class IndexController extends Controller
+class IndexController extends CommonController
 {
 
     public function index()

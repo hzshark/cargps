@@ -33,7 +33,7 @@ function CheckForm()
 <script type="text/javascript" src="__PUBLIC__/js/js2.js"></script>
 <div id="login">
   <h1>新能源汽车 实时调度系统</h1>
-  <form name="form1" method="post" action="Login/logincheck" autocomplete="off" onsubmit="return CheckForm();" class="form">
+  <form name="form1" method="post" action="__SELF__" autocomplete="off" onsubmit="return CheckForm();" class="form">
     <ul>
       <li> <em class="user">账号</em>
         <input type="text" placeholder="请输入账号" class="input" name="UNAME" size="15" onmouseover="this.focus()" onfocus="this.select()"  value="">
@@ -43,7 +43,7 @@ function CheckForm()
       </li>
       <li> <em class="pw">验证码</em>
         <input type="text" placeholder="验证码"  class="input" name="" onmouseover="this.focus()" onfocus="this.select()" size="4" value="">
-        <div class="code"><img src="/home/index/verify"></div>
+        <div class="code"><img src="{:U(verify)}" alt="验证码" onClick="this.src=this.src+'?'+Math.random()"></div>
       </li>
       <li style="border:none">
         <input type="submit" value="登录" class="sumbit"  name="submit">

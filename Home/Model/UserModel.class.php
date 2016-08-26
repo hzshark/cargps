@@ -1,6 +1,6 @@
 <?php
-namespace Admin\Model;
+namespace Home\Model;
 use Think\Model;
 class UserModel extends Model {
-
+    protected $tableName = 'user_user';
 }

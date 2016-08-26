@@ -18,6 +18,8 @@ return array(
     'SESSION_AUTO_START' => true, //是否开启session
     'APP_DEBUG' => true, //调试模式开关
     'TOKEN_ON' => true, //是否开启令牌验证
+    'TOKEN_NAME'=>'__hash__',    // 令牌验证的表单隐藏字段名称
+    'TOKEN_TYPE'=>'md5',  //令牌哈希验证规则默认为MD5
     'URL_MODEL' => 2, //URL模式：0 普通模式 1 PATHINFO 2 REWRITE 3 兼容模式
     'URL_ROUTER_ON' => true,
     'URL_PATHINFO_DEPR' => '/', //PATHINFO URL 模式下，各参数之间的分割符号
